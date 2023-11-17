@@ -204,7 +204,7 @@ export default function Home() {
                 Marcos Peres Ramos
               </h1>
               <p className="md:text-base text-sm">
-                Produtor e diretor de transmissão de eventos ao vivo
+                Produtor, diretor e tecnico de som
               </p>
               <ul className="flex gap-2 mt-4">
                 {socialMedia.map(renderSocialMedia)}
