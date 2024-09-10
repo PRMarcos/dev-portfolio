@@ -1,3 +1,5 @@
+"use client"
+
 import Head from "next/head";
 import Image, { StaticImageData } from "next/image";
 import Menu from "@/components/Menu";

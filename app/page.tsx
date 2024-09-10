@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Head from "next/head";
 import { useCallback } from "react";
@@ -144,6 +146,7 @@ const Skills = ({
 };
 
 export default function Home() {
+  
   const renderSocialMedia = useCallback(
     ({ label, link }: Item, idx: number) => (
       <SocialMedia label={label} link={link} key={idx} />
