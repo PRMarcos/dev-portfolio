@@ -1,6 +1,6 @@
 type ProfessionalSumaryItem = {title: string;text: string;}
 
-export function ProfessionalSumaryItem(input: ProfessionalSumaryItem) {
+export default function ProfessionalSumaryItem(input: ProfessionalSumaryItem) {
   const {title,text} = input;
     return (
       <div className="flex flex-col gap-4">

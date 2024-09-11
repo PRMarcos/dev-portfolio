@@ -4,10 +4,10 @@ import Head from "next/head";
 import Image, { StaticImageData } from "next/image";
 import Menu from "@/components/Menu";
 
-import recording1 from "@/assets/portfolio/wacom-film-animation-five-common-mistakes-m-i.jpeg";
-import recording2 from "@/assets/portfolio/images.jpeg";
-import recording3 from "@/assets/portfolio/download.jpeg";
-import recording4 from "@/assets/portfolio/29-04-Saga-Blog-Edicao-Video-blog-1080x675.jpeg";
+import recording1 from "@/assets/thumbs/wacom-film-animation-five-common-mistakes-m-i.jpeg";
+import recording2 from "@/assets/thumbs/images.jpeg";
+import recording3 from "@/assets/thumbs/download.jpeg";
+import recording4 from "@/assets/thumbs/29-04-Saga-Blog-Edicao-Video-blog-1080x675.jpeg";
 import { useCallback } from "react";
 import Footer from "@/components/Footer";
 

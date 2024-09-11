@@ -5,18 +5,21 @@ import { Inter } from "next/font/google";
 import Menu from "@/components/Menu";
 import Footer from "@/components/Footer";
 
-import marcos from "@/assets/person/marcos1.png";
-import { SocialMedia } from "@/components/SocialMediaBtn";
-import { ProfessionalSumaryItem } from "@/components/ProfissionalSumaryItem";
-import { SkillGroup } from "@/components/SkillGroup";
-
-
-import {homePage_SocialMediaLinks} from "@/site-data"
-import {homePage_SkillGroupList} from "@/site-data"
-import {homePage_ProfessionalSumary} from "@/site-data"
-
-
 const inter = Inter({ subsets: ["latin"] });
+import authorPic from "@/assets/person/marcos_peres_ramos.png";
+
+import SocialMedia  from "@/components/SocialMediaBtn";
+import ProfessionalSumaryItem  from "@/components/ProfissionalSumaryItem";
+import SkillGroup  from "@/components/SkillGroup";
+
+
+import {
+  homePage_SocialMediaLinks,
+  homePage_SkillGroupList,
+  homePage_ProfessionalSumary} from "@/site-data"
+
+
+
 
 export const metadata = {
   title: 'Bem vindo!',
@@ -64,7 +67,7 @@ export default function Home() {
 
             <div className="flex md:h-full items-center justify-center -z-10">
               <Image
-                src={marcos}
+                src={authorPic}
                 alt="Image Marcos"
                 className="aspect-[0.98/1] w-96"
               />

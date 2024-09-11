@@ -20,7 +20,7 @@ function SkillItem (input: SkillItemInput){
 }
 
 
-export function SkillGroup (input:SkillGroupInput ) {
+export default function SkillGroup (input:SkillGroupInput ) {
 
   const {title,content} = input;
     return (

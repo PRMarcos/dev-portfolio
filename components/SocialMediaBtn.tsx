@@ -1,6 +1,6 @@
 type SocialMeidaItem = {label: string; link: string;}
 
-export function SocialMedia (input: SocialMeidaItem, idx: number) {
+export default function SocialMediaBtn (input: SocialMeidaItem, idx: number) {
   const { label, link } = input;
     return (
       <a
