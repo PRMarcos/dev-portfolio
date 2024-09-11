@@ -3,14 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
-import { MdOutlineFileDownload } from "react-icons/md";
+
+
+import {homePage_MenuLinks} from "@/site-data"
+
+import {homePage_CallToAction} from "@/site-data"
 
 type  MenuItem = { label:string, link:string };
-
-const menuList = [
-  { label: "Home", link: "/" },
-  { label: "Portfolio", link: "/portfolio" },
-];
 
 const linesAnimation = [
   { style: "transform rotate-45 translate-y-2 animate-spin-slow" },
@@ -47,7 +46,7 @@ function MenuList() {
   );
   return (
     <ul className="flex flex-col items-center lg:flex-row gap-2">
-      {menuList.map(renderLinks)}
+      {homePage_MenuLinks.map(renderLinks)}
     </ul>
   );
 }
@@ -55,11 +54,11 @@ function MenuList() {
 const ButtonDownload = () => {
   return (
     <Link
-      href="https://drive.google.com/uc?export=download&id=1bXQn0094ksguTN58MDtgKDqkzVnU_qB8"
+      href={homePage_CallToAction.link}
       className="flex items-center gap-2 text-sm font-medium uppercase text-white bg-blue-800  px-5 py-2 w-full justify-center rounded-full md:w-auto"
     >
-      <span>Currículo</span>
-      <MdOutlineFileDownload className="w-5 h-5" />
+      <span>{homePage_CallToAction.label}</span>
+      <homePage_CallToAction.icon className="w-5 h-5" />
     </Link>
   );
 };
