@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Head from "next/head";
-import { useCallback } from "react";
 import { Inter } from "next/font/google";
 
 import Menu from "@/components/Menu";
@@ -8,10 +7,9 @@ import Footer from "@/components/Footer";
 
 import marcos from "@/assets/person/marcos1.png";
 import { SocialMedia } from "@/components/SocialMediaBtn";
-import { Item } from "@/type";
 import { ProfessionalSumaryItem } from "@/components/ProfissionalSumaryItem";
 import { SkillGroup } from "@/components/SkillGroup";
-import { link } from "fs";
+
 
 
 
