@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Head from "next/head";
 import { Inter } from "next/font/google";
 
 import Menu from "@/components/Menu";
@@ -10,8 +9,10 @@ import { SocialMedia } from "@/components/SocialMediaBtn";
 import { ProfessionalSumaryItem } from "@/components/ProfissionalSumaryItem";
 import { SkillGroup } from "@/components/SkillGroup";
 
-
-
+export const metadata = {
+  title: 'Bem vindo!',
+  description:"Produtor e diretor de transmissão de eventos ao vivo",
+}
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -96,16 +97,6 @@ const skills = [
 export default function Home() {
 
   return (
-    <>
-      <Head>
-        <title>Marcos Peres Ramos</title>
-        <meta
-          name="description"
-          content="Produtor e diretor de transmissão de eventos ao vivo"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main
         className={`flex min-h-screen flex-col items-center ${inter.className}`}
       >
@@ -345,6 +336,5 @@ export default function Home() {
 
         <Footer className="h-20 bg-[#1E293B]" />
       </main>
-    </>
   );
 }
