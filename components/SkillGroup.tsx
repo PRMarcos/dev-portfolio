@@ -7,7 +7,7 @@ function SkillItem (skillItemInput: SkillItemInput){
 
   const {listLength,idx,content} = skillItemInput
   return(
-    <div key={idx} className="flex flex-col">
+    <div className="flex flex-col">
     <h3 className="font-semibold text-gray-900">{content.subTitle}</h3>
     <p className="text-gray-700">{content.text}</p>
     {listLength === idx + 1 ? null : (
@@ -28,7 +28,7 @@ export function SkillGroup (skillGroupInput:SkillGroupInput ) {
         </h2>
   
         {content.map((item, idx) => (
-         <SkillItem content={item} idx={idx} listLength={content.length} />
+         <SkillItem content={item} idx={idx} key={idx} listLength={content.length} />
         ))}
       </div>
     );
