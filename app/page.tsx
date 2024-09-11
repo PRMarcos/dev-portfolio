@@ -106,17 +106,6 @@ export default function Home() {
     []
   );
 
-  const renderSkills = useCallback(
-    (
-      {
-        title,
-        content,
-      }: { title: string; content: { subTitle: string; text: string }[] },
-      idx: number
-    ) => <SkillGroup title={title} content={content} key={idx} />,
-    []
-  );
-
   return (
     <>
       <Head>
@@ -297,7 +286,12 @@ export default function Home() {
             </h1>
 
             <div className="w-full flex flex-col lg:flex-row gap-4 max-w-screen-2xl">
-              {skills.map(renderSkills)}
+
+              {skills.map(function(item,idx) {
+                return (
+                  <SkillGroup title={item.title} content={item.content} key={idx} />
+                )
+              })}
             </div>
 
             <div></div>
