@@ -13,6 +13,7 @@ import { SocialMedia } from "@/components/SocialMediaBtn";
 import { Item } from "@/type";
 import { ProfessionalResumeItem } from "@/components/ProfissionalResumeItem";
 import { SkillGroup } from "@/components/SkillGroup";
+import { link } from "fs";
 
 
 
@@ -97,13 +98,6 @@ const skills = [
 ];
 
 export default function Home() {
-  
-  const renderSocialMedia = useCallback(
-    ({ label, link }: Item, idx: number) => (
-      <SocialMedia label={label} link={link} key={idx} />
-    ),
-    []
-  );
 
   const renderProfessionalResume = useCallback(
     ({ title, text }: { title: string; text: string }, idx: number) => (
@@ -161,7 +155,12 @@ export default function Home() {
                 Produtor, diretor e tecnico de som
               </p>
               <ul className="flex gap-2 mt-4">
-                {socialMedia.map(renderSocialMedia)}
+
+              {socialMedia.map(function(item,idx) {
+                return (
+                  <SocialMedia label={item.label} link={item.link} key={idx}/>
+                )
+              })}
               </ul>
             </div>
 
