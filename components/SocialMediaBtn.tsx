@@ -1,6 +1,7 @@
-import type { Item } from "@/type";
+type SocialMeidaItem = {label: string; link: string;}
 
-export function SocialMedia ({ label, link }: Item, idx: number) {
+export function SocialMedia (input: SocialMeidaItem, idx: number) {
+  const { label, link } = input;
     return (
       <a
         href={link}

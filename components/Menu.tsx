@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
 
-import type { Item } from "@/type";
+type  MenuItem = { label:string, link:string };
 
 const menuList = [
   { label: "Home", link: "/" },
@@ -26,7 +26,7 @@ function MenuList() {
   const pathname = usePathname();
 
   const renderLinks = useCallback(
-    ({ label, link }: Item, idx: number) => {
+    ({ label, link }: MenuItem, idx: number) => {
       const isSelect = String(pathname) === link;
 
       return (

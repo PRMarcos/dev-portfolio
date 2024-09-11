@@ -1,11 +1,13 @@
-type SkillItemInput = {listLength:number, idx:number, content:{ subTitle: string, text: string }}
+type SkillItem = { subTitle: string, text: string };
+
+type SkillItemInput = {listLength:number, idx:number, content:SkillItem}
 
 type SkillGroupInput = { title: string, content: { subTitle: string; text: string }[]}
 
 
-function SkillItem (skillItemInput: SkillItemInput){
+function SkillItem (input: SkillItemInput){
 
-  const {listLength,idx,content} = skillItemInput
+  const {listLength,idx,content} = input;
   return(
     <div className="flex flex-col">
     <h3 className="font-semibold text-gray-900">{content.subTitle}</h3>
@@ -18,9 +20,9 @@ function SkillItem (skillItemInput: SkillItemInput){
 }
 
 
-export function SkillGroup (skillGroupInput:SkillGroupInput ) {
+export function SkillGroup (input:SkillGroupInput ) {
 
-  const {title,content} = skillGroupInput;
+  const {title,content} = input;
     return (
       <div className="border border-gray-300 p-4 rounded-lg flex flex-col gap-4">
         <h2 className="font-semibold text-gray-900 sm:text-xl lg:text-2xl">
