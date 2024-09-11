@@ -1,11 +1,8 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
-
 
 import Menu from "@/components/Menu";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
 import authorPic from "@/assets/person/marcos_peres_ramos.png";
 
 import SocialMedia  from "@/components/SocialMediaBtn";
@@ -30,7 +27,7 @@ export default function Home() {
 
   return (
       <main
-        className={`flex min-h-screen flex-col items-center ${inter.className}`}
+        className={`flex min-h-screen flex-col items-center`}
       >
         <div className="relative h-screen w-full isolate">
           <div

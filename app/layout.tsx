@@ -1,5 +1,8 @@
-import '@/styles/globals.css'
+import { Inter } from "next/font/google";
 import type { Viewport } from 'next'
+
+
+import '@/styles/globals.css'
  
 export const viewport: Viewport = {
   width: 'device-width',
@@ -10,6 +13,8 @@ export const metadata = {
   description: 'Aqui eu te conto sobre meu progresso nos estudos em programação',
 }
 
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({
   children,
 }: {
@@ -17,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
