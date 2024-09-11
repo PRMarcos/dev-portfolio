@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 import marcos from "@/assets/person/marcos1.png";
 import { SocialMedia } from "@/components/SocialMediaBtn";
 import { Item } from "@/type";
-import { ProfessionalResumeItem } from "@/components/ProfissionalResumeItem";
+import { ProfessionalSumaryItem } from "@/components/ProfissionalSumaryItem";
 import { SkillGroup } from "@/components/SkillGroup";
 import { link } from "fs";
 
@@ -326,7 +326,7 @@ export default function Home() {
                 
               {professionalResume.map(function(item,idx) {
                 return (
-                  <ProfessionalResumeItem title={item.title} text={item.text} key={idx} />
+                  <ProfessionalSumaryItem title={item.title} text={item.text} key={idx} />
                 )
               })}
               </div>

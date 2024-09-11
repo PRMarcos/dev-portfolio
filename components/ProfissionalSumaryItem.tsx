@@ -1,4 +1,4 @@
-export function ProfessionalResumeItem({
+export function ProfessionalSumaryItem({
     title,
     text,
   }: {
