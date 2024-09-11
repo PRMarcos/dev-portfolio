@@ -1,10 +1,6 @@
-export function ProfessionalSumaryItem({
-    title,
-    text,
-  }: {
-    title: string;
-    text: string;
-  }) {
+type ProfessionalSumaryItem = {title: string;text: string;}
+
+export function ProfessionalSumaryItem({title,text,}: ProfessionalSumaryItem) {
     return (
       <div className="flex flex-col gap-4">
         <h2 className="font-semibold text-white">{title}</h2>
