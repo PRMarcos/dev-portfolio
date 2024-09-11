@@ -99,13 +99,6 @@ const skills = [
 
 export default function Home() {
 
-  const renderProfessionalResume = useCallback(
-    ({ title, text }: { title: string; text: string }, idx: number) => (
-      <ProfessionalResumeItem title={title} text={text} key={idx} />
-    ),
-    []
-  );
-
   return (
     <>
       <Head>
@@ -330,7 +323,12 @@ export default function Home() {
                 Resumo Profissional
               </h1>
               <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                {professionalResume.map(renderProfessionalResume)}
+                
+              {professionalResume.map(function(item,idx) {
+                return (
+                  <ProfessionalResumeItem title={item.title} text={item.text} key={idx} />
+                )
+              })}
               </div>
             </div>
 
