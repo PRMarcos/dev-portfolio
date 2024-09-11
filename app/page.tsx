@@ -12,7 +12,8 @@ import marcos from "@/assets/person/marcos1.png";
 import { SocialMedia } from "@/components/SocialMediaBtn";
 import { Item } from "@/type";
 import { ProfessionalResumeItem } from "@/components/ProfissionalResumeItem";
-import { SkillList } from "@/components/SkillList";
+import { SkillGroup } from "@/components/SkillGroup";
+
 
 
 
@@ -118,7 +119,7 @@ export default function Home() {
         content,
       }: { title: string; content: { subTitle: string; text: string }[] },
       idx: number
-    ) => <SkillList title={title} content={content} key={idx} />,
+    ) => <SkillGroup title={title} content={content} key={idx} />,
     []
   );
 
