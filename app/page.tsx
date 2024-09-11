@@ -9,8 +9,12 @@ import Menu from "@/components/Menu";
 import Footer from "@/components/Footer";
 
 import marcos from "@/assets/person/marcos1.png";
+import { SocialMedia } from "@/components/SocialMediaBtn";
+import { Item } from "@/type";
+import { ProfessionalResumeItem } from "@/components/ProfissionalResumeItem";
+import { SkillList } from "@/components/SkillList";
 
-import type { Item } from "@/type";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -91,60 +95,6 @@ const skills = [
   },
 ];
 
-const SocialMedia = ({ label, link }: Item, idx: number) => {
-  return (
-    <a
-      href={link}
-      key={idx}
-      className="text-sm font-medium uppercase border border-gray-200 text-gray-900 hover:border-[#0582b6] px-5 py-2 flex justify-center rounded-full hover:bg-[#e7f8ff] hover:text-[#0582b6]"
-    >
-      {label}
-    </a>
-  );
-};
-
-const ProfessionalResume = ({
-  title,
-  text,
-}: {
-  title: string;
-  text: string;
-}) => {
-  return (
-    <div className="flex flex-col gap-4">
-      <h2 className="font-semibold text-white">{title}</h2>
-      <p className="sm:text-base text-gray-400 text-sm">{text}</p>
-      <div className="border-t border-t-gray-500 h-0.5 w-full flex md:hidden"></div>
-    </div>
-  );
-};
-
-const Skills = ({
-  title,
-  content,
-}: {
-  title: string;
-  content: { subTitle: string; text: string }[];
-}) => {
-  return (
-    <div className="border border-gray-300 p-4 rounded-lg flex flex-col gap-4">
-      <h2 className="font-semibold text-gray-900 sm:text-xl lg:text-2xl">
-        {title}
-      </h2>
-
-      {content.map((item, idx) => (
-        <div key={idx} className="flex flex-col">
-          <h3 className="font-semibold text-gray-900">{item.subTitle}</h3>
-          <p className="text-gray-700">{item.text}</p>
-          {content?.length === idx + 1 ? null : (
-            <div className="border-t border-t-gray-500 h-0.5 w-full mt-4"></div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
-
 export default function Home() {
   
   const renderSocialMedia = useCallback(
@@ -156,7 +106,7 @@ export default function Home() {
 
   const renderProfessionalResume = useCallback(
     ({ title, text }: { title: string; text: string }, idx: number) => (
-      <ProfessionalResume title={title} text={text} key={idx} />
+      <ProfessionalResumeItem title={title} text={text} key={idx} />
     ),
     []
   );
@@ -168,7 +118,7 @@ export default function Home() {
         content,
       }: { title: string; content: { subTitle: string; text: string }[] },
       idx: number
-    ) => <Skills title={title} content={content} key={idx} />,
+    ) => <SkillList title={title} content={content} key={idx} />,
     []
   );
 
