@@ -3,6 +3,8 @@ import type { Viewport } from 'next'
 
 
 import '@/styles/globals.css'
+import Footer from "@/components/Footer";
+import Menu from "@/components/Menu";
  
 export const viewport: Viewport = {
   width: 'device-width',
@@ -22,7 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Menu />
+        {children}
+        <Footer className="h-20" />
+      </body>
     </html>
   )
 }
