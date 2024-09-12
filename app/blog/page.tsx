@@ -1,4 +1,4 @@
-export default function Tags() {
+export default function Blog() {
 
     return (
         <main
