@@ -34,7 +34,7 @@ export default function Menu() {
             {renderHambMenu()}
 
           <div
-            className={`flex flex-col z-10 shadow-lg p-3 py-28 pb-36 gap-2 fixed w-64 h-screen bg-white top-0 -right-[254px] rounded-s-2xl transition-all duration-300 transform ease-in-out ${
+            className={`flex flex-col z-10 shadow-lg p-3 py-28 pb-36 gap-10 fixed w-64 h-screen bg-white top-0 -right-[254px] rounded-s-2xl transition-all duration-300 transform ease-in-out ${
               menuState && "-translate-x-full"
             }`}
           >
