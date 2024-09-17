@@ -15,7 +15,7 @@ export function MenuLinkList({renderCol,linkList}:{renderCol:boolean,linkList:Me
           <Link
             href={link}
             key={idx}
-            className={`text-sm uppercase text-gray-900 px-2 py-1 ${
+            className={`h-fit text-sm uppercase text-gray-900  ${
               isSelect
                 ? "border-b-2 border-[#0582b6] text-[#0582b6]"
                 : "hover:text-[#0582b6]"
@@ -29,7 +29,7 @@ export function MenuLinkList({renderCol,linkList}:{renderCol:boolean,linkList:Me
     );
   
     return (
-      <ul className={`flex ${renderCol? "flex-col" : "flex-row"} gap-2`}>
+      <ul className={`flex items-center ${renderCol? "flex-col" : "flex-row"} gap-4 `}>
         {linkList.map(renderLinks)}
       </ul>
     );
