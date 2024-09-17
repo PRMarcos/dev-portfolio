@@ -2,7 +2,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 
 export const homePage_MenuLinks = [
   { label: "Home", link: "/" },
-  { label: "Portfolio", link: "/portfolio" },
+  { label: "Blog", link: "/blog" },
+  { label: "Tags", link: "/tags" }
 ];
 
 export const homePage_CallToAction =  

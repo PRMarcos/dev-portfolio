@@ -21,7 +21,7 @@ function Line({ style }: { style?: string | false }) {
   return <li className={`bg-black h-0.5 duration-300 w-6 ${style}`}> </li>;
 }
 
-function MenuList() {
+function MenuList({renderCol}:{renderCol:boolean}) {
   const pathname = usePathname();
 
   const renderLinks = useCallback(
@@ -32,10 +32,10 @@ function MenuList() {
         <Link
           href={link}
           key={idx}
-          className={`text-sm font-medium uppercase text-gray-900 px-5 py-2 w-full flex justify-center rounded-full lg:w-auto ${
+          className={`text-sm uppercase text-gray-900 px-2 py-1 ${
             isSelect
-              ? "bg-[#9Ecfe4] !text-[#0582b6]"
-              : "hover:bg-[#9ecfe4] hover:text-[#0582b6]"
+              ? "border-b-2 border-[#0582b6] text-[#0582b6]"
+              : "hover:text-[#0582b6]"
           }`}
         >
           {label}
@@ -44,18 +44,20 @@ function MenuList() {
     },
     [pathname]
   );
+  // flex flex-col items-center lg:flex-row gap-2
   return (
-    <ul className="flex flex-col items-center lg:flex-row gap-2">
+    <ul className={`flex ${renderCol? "flex-col" : "flex-row"} gap-2`}>
       {homePage_MenuLinks.map(renderLinks)}
     </ul>
   );
 }
+// flex items-center gap-2 text-sm font-medium uppercase text-white bg-blue-800  px-5 py-2 w-full justify-center rounded-full md:w-auto
 
 const ButtonDownload = () => {
   return (
     <Link
       href={homePage_CallToAction.link}
-      className="flex items-center gap-2 text-sm font-medium uppercase text-white bg-blue-800  px-5 py-2 w-full justify-center rounded-full md:w-auto"
+      className="flex items-center gap-2 uppercase text-white bg-blue-800  px-5 py-2 justify-center rounded-full"
     >
       <span>{homePage_CallToAction.label}</span>
       <homePage_CallToAction.icon className="w-5 h-5" />
@@ -74,19 +76,18 @@ export default function Menu() {
   );
 
   return (
-    <section className="flex px-9 py-6 items-center w-full justify-between">
-      <div className="w-10 h-full"></div>
-      <div className="flex items-center">
-        <div className="hidden lg:flex gap-6">
-          <MenuList />
+    <section className="flex py-6 ">
+      <div className="flex w-full flex-row-reverse	">
+        <div className="hidden sm:flex justify-between w-full ">
+          <MenuList renderCol={false} />
           <ButtonDownload />
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex sm:hidden self-end ">
           <ul
             onClick={() => {
               setToggle(!toggle);
             }}
-            className="flex flex-col gap-1.5 z-20"
+            className="flex py-[9px] flex-col gap-1.5 z-20"
           >
             {linesAnimation.map(renderLine)}
           </ul>
@@ -95,7 +96,7 @@ export default function Menu() {
               toggle && "-translate-x-full"
             }`}
           >
-            <MenuList />
+            <MenuList renderCol={true} />
             <ButtonDownload />
           </div>
         </div>
