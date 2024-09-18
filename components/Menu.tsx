@@ -13,7 +13,7 @@ import { LanguageToggle } from "./LanguageToggle";
 
 
 
-export default function Menu() {
+export default function Menu({ className }: { className?: string }) {
   const [menuState, setmenuState] = useState(false);
   const [language, setLanguage] = useState(false);
   const [theme, setTheme] = useState(false);
@@ -28,7 +28,7 @@ export default function Menu() {
 
 
   return (
-    <section className="flex my-6 h-[36px]">
+    <header className={`flex my-6 h-9 ${className} `}>
       <div className="flex w-full justify-between flex-row-reverse sm:flex-row ">
         <div className="hidden sm:flex">
           <MenuLinkList linkList={homePage_MenuLinks} renderCol={false} />
@@ -54,6 +54,6 @@ export default function Menu() {
 
           </div>
         </div>
-    </section>
+    </header>
   );
 }
