@@ -1,4 +1,5 @@
 import { MdOutlineFileDownload } from "react-icons/md";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export const homePage_MenuLinks = [
   { label: "Home", link: "/" },
@@ -17,10 +18,11 @@ export const homePage_CallToAction =
 
 export const homePage_SocialMediaLinks = [
     {
-      label: "Linkedin",
+      label: "linkedin",
       link: "https://www.linkedin.com/in/marcos-peres-ramos-98627b268/",
+      SocialIcon: FaLinkedin
     },
-    { label: "GitHub", link: "https://github.com/prmarcos" },
+    { label: "github", link: "https://github.com/prmarcos", SocialIcon: FaGithub },
   ];
   
   export const homePage_SkillGroupList = [
