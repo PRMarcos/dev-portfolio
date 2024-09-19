@@ -6,6 +6,7 @@ export default function SocialMediaBtn (input: SocialMeidaItem, idx: number) {
   const { label, link, SocialIcon } = input;
     return (
       <a
+        target="_blank"
         href={link}
         key={idx}
         className=" text-sm font-medium uppercase border border-gray-200 text-gray-900 hover:border-[#0582b6] px-2 py-2 flex justify-center rounded-full hover:bg-[#e7f8ff] hover:text-[#0582b6]"
