@@ -21,7 +21,7 @@ export default function TagListFilterd({ params }: { params: { tag: string } }) 
         <div
         className={`w-full mb-9`}
       >
-          <h2 className="font-bold text-xl mb-5">{filtredPosts.length==0? "Nada para mostrar ainda...": `Tags -> ${params.tag}`}</h2>
+          <h2 className="font-bold text-xl mb-5">{filtredPosts.length==0? "Nada para mostrar ainda...": `Tags -> #${params.tag}`}</h2>
          <PostPreviewLinkList postList={filtredPosts} />
       </div>
 )
