@@ -90,4 +90,6 @@ export const data = [
       "description": "Entenda como integrar o MongoDB em suas aplicações Node.js para gerenciar dados de forma eficiente."
     }
   ]
+
+  export const dadaEmpty = []
   

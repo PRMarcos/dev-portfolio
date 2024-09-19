@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full mt-9">
+      <section className={`${data.length==0 && "hidden"} w-full mt-9`}>
         <h2 className="font-bold text-xl">Ultimos Posts</h2>
 
         <div className=" my-2 flex flex-col gap-1">
