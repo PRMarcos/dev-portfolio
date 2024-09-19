@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { data } from "@/site-data/posts/fakepostdata"
-
 import { PostLinkHome } from "@/components/PostLinkHome";
-
 import authorPic from "@/assets/person/Marcos_Peres_Ramos.jpg";
-
 import SocialMedia from "@/components/SocialMediaBtn";
+
 
 import {
   homePage_SocialMediaLinks
@@ -19,7 +17,6 @@ export const metadata = {
 export default function Home() {
 
   return (
-    // flex min-h-screen flex-col items-center
     <div className={`w-full mb-9`}>
 
       <section className="mt-5 w-full relative flex items-center  flex-col sm:flex-row gap-6">
@@ -65,13 +62,8 @@ export default function Home() {
           })}
 
         </div>
-
-
         <a href="/blog" className={`${data.length<=7 && "hidden"} uppercase font-bold cursor-pointer  hover:text-[#0582b6]`} >Ver Mais</a>
-
       </section>
-
-
     </div>
   );
 }
