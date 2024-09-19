@@ -4,12 +4,16 @@ import Link from "next/link";
 
 type  MenuItem = { label:string, link:string };
 
+function getFristPieceFromLink(link:string){
+  return `/${String(link).split("/")[1]}`
+}
 export function MenuLinkList({renderCol,linkList}:{renderCol:boolean,linkList:MenuItem[]}) {
     const pathname = usePathname();
   
     const renderLinks = useCallback(
       ({ label, link }: MenuItem, idx: number) => {
-        const isSelect = String(pathname) === link;
+
+        const isSelect = getFristPieceFromLink(pathname) === link;
   
         return (
           <Link
