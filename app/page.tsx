@@ -6,7 +6,8 @@ import SocialMedia from "@/components/SocialMediaBtn";
 
 
 import {
-  homePage_SocialMediaLinks
+  homePage_SocialMediaLinks,
+  homePage_WelcomeMessage
 } from "@/site-data"
 
 export const metadata = {
@@ -27,10 +28,10 @@ export default function Home() {
         />
         <div className="flex w-full sm:items-start flex-col gap-2 justify-center">
           <h1 className="font-bold text-2xl">
-            Olá, me chamo Marcos!
+            {homePage_WelcomeMessage.headline}
           </h1>
           <p className="">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu commodo metus, non pellentesque ex. Praesent in porta leo. Mauris nec auctor augue. Maecenas luctus fringilla odio, a hendrerit quam aliquet et. Donec at ullamcorper libero.
+            {homePage_WelcomeMessage.message}
           </p>
           <ul className="flex gap-2 mt-4">
 
