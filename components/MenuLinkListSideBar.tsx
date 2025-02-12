@@ -7,7 +7,7 @@ type  MenuItem = { label:string, link:string };
 function getFristPieceFromLink(link:string){
   return `/${String(link).split("/")[1]}`
 }
-export function MenuLinkList({renderCol,linkList,className}:{renderCol:boolean,linkList:MenuItem[],className:string}) {
+export function MenuLinkListSideBar({renderCol,linkList,className}:{renderCol:boolean,linkList:MenuItem[],className:string}) {
     const pathname = usePathname();
   
     const renderLinks = useCallback(
@@ -19,10 +19,10 @@ export function MenuLinkList({renderCol,linkList,className}:{renderCol:boolean,l
           <Link
             href={link}
             key={idx}
-            className={`h-fit text-sm uppercase text-gray-900  ${
+            className={`h-fit text-sm uppercase text-gray-900  py-1 ${
               isSelect
-                ? "border-b-2 border-[#0582b6] text-[#0582b6]"
-                : "hover:text-[#0582b6]"
+                ? "bg-[#0582b6] text-white rounded-sm"
+                : "hover:bg-[#0581b611] "
             }`}
           >
             {label}
