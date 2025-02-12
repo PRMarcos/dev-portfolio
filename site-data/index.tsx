@@ -1,5 +1,6 @@
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaGithub, FaInstagram } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 
 export const layout_MenuLinks = [
   { label: "Home", link: "/" },
@@ -25,6 +26,7 @@ export const homePage_SocialMediaLinks = [
       SocialIcon: FaInstagram
     },
     { label: "github", link: "https://github.com/prmarcos", SocialIcon: FaGithub },
+    { label: "email", link: "mailto:marcosperes.contato@gmail.com", SocialIcon: CiMail },
   ];
 
   export const layout_footerMessage = `${new Date().getFullYear()} © Marcos Peres Ramos. Todos os direitos reservados.`
