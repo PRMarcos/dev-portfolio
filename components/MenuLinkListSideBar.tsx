@@ -19,10 +19,10 @@ export function MenuLinkListSideBar({renderCol,linkList,className}:{renderCol:bo
           <Link
             href={link}
             key={idx}
-            className={`h-fit text-sm uppercase text-gray-900  py-1 ${
+            className={`h-fit text-sm uppercase text-copy/80  py-1 ${
               isSelect
-                ? "bg-[#0582b6] text-white rounded-sm"
-                : "hover:bg-[#0581b611] "
+                ? "bg-primary text-copyInverted rounded-sm"
+                : "hover:bg-primary/20 "
             }`}
           >
             {label}

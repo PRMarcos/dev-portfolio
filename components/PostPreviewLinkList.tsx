@@ -15,9 +15,9 @@ return(
 
     <li className="flex flex-col gap-2">
     <div className="flex flex-wrap gap-2 ">
-      <span className="text-gray-400 min-w-[120px] flex-none">{date}</span>
+      <span className="text-copy/50 min-w-[120px] flex-none">{date}</span>
 
-      <a href={`/blog/${slug}`} className=" hover:text-[#0582b6]">
+      <a href={`/blog/${slug}`} className=" hover:text-primary">
         <h3 className="font-bold">{title}</h3>
       </a>
     </div>

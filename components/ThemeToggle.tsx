@@ -9,7 +9,7 @@ export function ThemeToggle({light,action}:{light?:boolean, action?:MouseEventHa
     return (
       <button
         onClick={action}
-        className="flex gap-4"
+        className="flex gap-4 text-copy"
       >
        {
         light?

@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react";
 
   function Line({ style }: { style?: string | false }) {
-    return <li className={`bg-black h-0.5 duration-300 w-6 ${style} select-none`}> </li>;
+    return <li className={`bg-copy h-0.5 duration-300 w-6 ${style} select-none`}> </li>;
   }
   export function HamburgerMenu({active,action}:{active:boolean,action:MouseEventHandler}){
 

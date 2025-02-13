@@ -7,7 +7,7 @@ export function SiteSearch({action}:{action?:MouseEventHandler}){
     return (
       <button
         onClick={action}
-        className=""
+        className=" text-copy"
       >
         <MdSearch className="w-8 h-8" />
       </button>

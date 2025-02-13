@@ -17,14 +17,16 @@ export const metadata = {
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html lang="pt-br" className={""}>
-      <body className={`flex-col flex max-w-3xl mx-auto px-8 min-h-screen text-sm font-normal	text-black	${inter.className}`}>
+    <html lang="pt-br" className={"light"}>
+      <body className={`transition-colors flex-col flex max-w-3xl mx-auto px-8 min-h-screen text-sm font-normal	text-copy bg-background	${inter.className}`}>
         <Menu className="flex-none"/>
         <main className="flex-1 container">
         {children}

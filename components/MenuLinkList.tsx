@@ -19,10 +19,10 @@ export function MenuLinkList({renderCol,linkList,className}:{renderCol:boolean,l
           <Link
             href={link}
             key={idx}
-            className={`h-fit text-sm uppercase text-gray-900  ${
+            className={`h-fit text-sm uppercase text-copy/50 ${
               isSelect
-                ? "border-b-2 border-[#0582b6] text-[#0582b6]"
-                : "hover:text-[#0582b6]"
+                ? "border-b-2 border-primary text-primary"
+                : "hover:text-primary"
             }`}
           >
             {label}

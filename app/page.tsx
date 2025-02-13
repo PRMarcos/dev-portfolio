@@ -63,7 +63,7 @@ export default function Home() {
           })}
 
         </div>
-        <a href="/blog" className={`${data.length<=7 && "hidden"} uppercase font-bold cursor-pointer  hover:text-[#0582b6]`} >Ver Mais</a>
+        <a href="/blog" className={`${data.length<=7 && "hidden"} uppercase font-bold cursor-pointer  hover:text-primary`} >Ver Mais</a>
       </section>
     </div>
   );

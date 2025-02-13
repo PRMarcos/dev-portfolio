@@ -9,7 +9,7 @@ export function ButtonCTA({link,label,Icon}:{link:string,label:string,Icon:IconT
     return (
       <Link
         href={link}
-        className="flex items-center gap-2 uppercase text-white bg-blue-800  px-5 py-2 justify-center rounded-full"
+        className="flex items-center gap-2 uppercase text-white bg-primary-800  px-5 py-2 justify-center rounded-full"
       >
         <span>{label}</span>
         <Icon className="w-5 h-5" />

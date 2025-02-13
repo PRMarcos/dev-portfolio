@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { layout_MenuLinks } from "@/site-data"
 import { MenuLinkList } from "./MenuLinkList";
@@ -14,12 +14,13 @@ import SocialMedia from "@/components/SocialMediaBtn";
 import {
   homePage_SocialMediaLinks,
 } from "@/site-data"
-import { actionAsyncStorage } from "next/dist/client/components/action-async-storage-instance";
 
-export default function Menu({ className }: { className?: string }) {
+
+export default function Menu({ className }: { className?: string}) {
   const [menuState, setmenuState] = useState(false);
   const [language, setLanguage] = useState(false);
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
+
 
   const renderHambMenu = useCallback(
     () => (
@@ -28,6 +29,12 @@ export default function Menu({ className }: { className?: string }) {
     [menuState]
   );
 
+  useEffect(() => {
+   
+    if (theme) document.documentElement.classList.replace("dark","light")
+      else document.documentElement.classList.replace("light","dark")
+    
+  }, [theme]);
 
 
   return (
@@ -38,7 +45,7 @@ export default function Menu({ className }: { className?: string }) {
         </div>
           <div className="flex gap-4 items-center">
             <LanguageToggle lang={language} action={()=>setLanguage(!language)} />
-            <ThemeToggle light={theme} action={()=>setTheme(!theme)}/>
+            <ThemeToggle light={theme} action={()=> setTheme(!theme)}/>
             <SiteSearch />
             <div className="flex sm:hidden self-end relative">
 
@@ -50,7 +57,7 @@ export default function Menu({ className }: { className?: string }) {
               </div>
       
               <div
-                className={`z-10 flex flex-col shadow-lg p-3 py-28 pb-36 gap-10 fixed w-64 h-screen bg-white top-0 -right-[254px] rounded-s-2xl transition-all duration-300 transform ease-in-out ${menuState && "-translate-x-full"
+                className={`z-10 flex bg-background flex-col shadow-lg p-3 py-28 pb-36 gap-10 fixed w-64 h-screen top-0 -right-[256px] rounded-s-2xl transition-all duration-300 transform ease-in-out ${menuState && "-translate-x-full"
                   }`}
               >
                 <MenuLinkListSideBar  className="flex text-center flex-col gap-4 px-8" linkList={layout_MenuLinks} renderCol={true} />
