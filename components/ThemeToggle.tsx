@@ -4,7 +4,7 @@ import { MdSunny  } from "react-icons/md";
 import { LuMoonStar  } from "react-icons/lu";
 
 
-export function ThemeToggle({light,action}:{light?:boolean, action?:MouseEventHandler}){
+export function ThemeToggle({theme,action}:{theme?:string|undefined, action?:MouseEventHandler}){
 
     return (
       <button
@@ -12,7 +12,7 @@ export function ThemeToggle({light,action}:{light?:boolean, action?:MouseEventHa
         className="flex gap-4 text-copy"
       >
        {
-        light?
+        theme === "dark"?
         <MdSunny className="w-8 h-8" /> 
         :
        <LuMoonStar className="w-8 h-8" />

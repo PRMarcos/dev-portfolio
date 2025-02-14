@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 import { layout_MenuLinks } from "@/site-data"
 import { MenuLinkList } from "./MenuLinkList";
@@ -19,7 +20,8 @@ import {
 export default function Menu({ className }: { className?: string}) {
   const [menuState, setmenuState] = useState(false);
   const [language, setLanguage] = useState(false);
-  const [theme, setTheme] = useState(true);
+  const {theme, setTheme} = useTheme();
+
 
 
   const renderHambMenu = useCallback(
@@ -29,12 +31,10 @@ export default function Menu({ className }: { className?: string}) {
     [menuState]
   );
 
-  useEffect(() => {
-   
-    if (theme) document.documentElement.classList.replace("dark","light")
-      else document.documentElement.classList.replace("light","dark")
-    
-  }, [theme]);
+  function handleToggleTheme(){
+    if(theme==="light") setTheme("dark")
+      else setTheme("light")
+  }
 
 
   return (
@@ -45,7 +45,7 @@ export default function Menu({ className }: { className?: string}) {
         </div>
           <div className="flex gap-4 items-center">
             <LanguageToggle lang={language} action={()=>setLanguage(!language)} />
-            <ThemeToggle light={theme} action={()=> setTheme(!theme)}/>
+            <ThemeToggle theme={theme} action={handleToggleTheme}/>
             <SiteSearch />
             <div className="flex sm:hidden self-end relative">
 

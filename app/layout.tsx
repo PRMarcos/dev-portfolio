@@ -5,6 +5,7 @@ import type { Viewport } from 'next'
 import '@/styles/globals.css'
 import Footer from "@/components/Footer";
 import Menu from "@/components/Menu";
+import { ThemeProvider } from "@/components/ThemeProvider";
  
 export const viewport: Viewport = {
   width: 'device-width',
@@ -25,13 +26,15 @@ export default function RootLayout({
 }) {
 
   return (
-    <html lang="pt-br" className={"light"}>
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={`transition-colors flex-col flex max-w-3xl mx-auto px-8 min-h-screen text-sm font-normal	text-copy bg-background	${inter.className}`}>
-        <Menu className="flex-none"/>
-        <main className="flex-1 container">
-        {children}
-        </main>
-        <Footer className="flex-none"/>
+        <ThemeProvider>
+          <Menu className="flex-none"/>
+          <main className="flex-1 container">
+          {children}
+          </main>
+          <Footer className="flex-none"/>
+        </ThemeProvider>
       </body>
     </html>
   )
