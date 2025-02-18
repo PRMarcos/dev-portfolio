@@ -4,11 +4,17 @@
 
 
 .root{
+ 
+}
+
+[data-theme='light']{
     --background: 255, 255, 255;
     --primary: 5, 130, 182;
     --primaryHover: 231, 248, 255;
     --copy:0,0,0;
     --copyInverted:255, 255, 255;
+    --copyNavigationSideBar: 255, 255, 255;
+
 }
 
 [data-theme='dark']{
@@ -17,5 +23,7 @@
     --primaryHover: 24, 26, 27;
     --copy:255, 255, 255;
     --copyInverted:0, 0, 0;
+    --copyNavigationSideBar: 255, 255, 255;
+    
 
 }

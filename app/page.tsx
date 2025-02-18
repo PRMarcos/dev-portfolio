@@ -6,14 +6,9 @@ import SocialMedia from "@/components/SocialMediaBtn";
 
 
 import {
-  homePage_SocialMediaLinks,
+  SocialMediaLinks,
   homePage_WelcomeMessage
 } from "@/site-data"
-
-export const metadata = {
-  title: 'Bem vindo!',
-  description: "Produtor e diretor de transmissão de eventos ao vivo",
-}
 
 export default function Home() {
 
@@ -35,7 +30,7 @@ export default function Home() {
           </p>
           <ul className="flex gap-2 mt-4">
 
-            {homePage_SocialMediaLinks.map(function (item, idx) {
+            {SocialMediaLinks.map(function (item, idx) {
               return (
                 <SocialMedia SocialIcon={item.SocialIcon} label={item.label} link={item.link} key={idx} />
               )

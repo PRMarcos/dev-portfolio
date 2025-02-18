@@ -1,11 +1,10 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react";
+import {useState } from "react";
 import { useTheme } from "next-themes";
 
-import { layout_MenuLinks } from "@/site-data"
-import { MenuLinkList } from "./MenuLinkList";
-import { MenuLinkListSideBar } from "./MenuLinkListSideBar";
+import { Navigation } from "@/site-data"
+import { NavigationLinks } from "./NavigationLinks";
 import { HamburgerMenu } from "./HamburgerMenu"
 import { SiteSearch } from "./SiteSearch";
 import { ThemeToggle } from "./ThemeToggle";
@@ -13,23 +12,15 @@ import { LanguageToggle } from "./LanguageToggle";
 import SocialMedia from "@/components/SocialMediaBtn";
 
 import {
-  homePage_SocialMediaLinks,
+  SocialMediaLinks,
 } from "@/site-data"
 
 
-export default function Menu({ className }: { className?: string}) {
+export default function Header({ className }: { className?: string}) {
   const [menuState, setmenuState] = useState(false);
   const [language, setLanguage] = useState(false);
   const {theme, setTheme} = useTheme();
 
-
-
-  const renderHambMenu = useCallback(
-    () => (
-      HamburgerMenu({ active: menuState, action: () => setmenuState(!menuState) })
-    ),
-    [menuState]
-  );
 
   function handleToggleTheme(){
     if(theme==="light") setTheme("dark")
@@ -41,30 +32,29 @@ export default function Menu({ className }: { className?: string}) {
     <header className={`flex my-6 h-9 ${className} `}>
       <div className="flex w-full justify-between flex-row-reverse sm:flex-row ">
         <div className="hidden sm:flex">
-          <MenuLinkList className="flex items-center flex-row gap-4 " linkList={layout_MenuLinks} renderCol={false} />
+          <NavigationLinks className="flex items-center flex-row gap-4 " linkList={Navigation} sidebar={false} />
         </div>
           <div className="flex gap-4 items-center">
-            <LanguageToggle lang={language} action={()=>setLanguage(!language)} />
             <ThemeToggle theme={theme} action={handleToggleTheme}/>
             <SiteSearch />
             <div className="flex sm:hidden self-end relative">
 
-              {renderHambMenu()}
+              
+              <HamburgerMenu active={menuState} action={() => setmenuState(!menuState)}/>
 
 
-
-              <div className={menuState?"fixed z-10 right-0 left-0 top-0 bottom-0":"hidden"} onClick={() => setmenuState(false)}>
+              <div className={menuState?"fixed z-10 right-0 left-0 top-0 bottom-0 select-none":"hidden"} onClick={() => setmenuState(false)}>
               </div>
       
               <div
                 className={`z-10 flex bg-background flex-col shadow-lg p-3 py-28 pb-36 gap-10 fixed w-64 h-screen top-0 -right-[256px] rounded-s-2xl transition-all duration-300 transform ease-in-out ${menuState && "-translate-x-full"
                   }`}
               >
-                <MenuLinkListSideBar  className="flex text-center flex-col gap-4 px-8" linkList={layout_MenuLinks} renderCol={true} />
+                <NavigationLinks  className="flex text-center flex-col gap-4 px-8" linkList={Navigation} sidebar={true} />
                 
                 <div className="flex flex-row justify-around px-8">
 
-                  {homePage_SocialMediaLinks.map(function (item, idx) {
+                  {SocialMediaLinks.map(function (item, idx) {
                       return (
                         <SocialMedia SocialIcon={item.SocialIcon} label={item.label} link={item.link} key={idx} />
                       )

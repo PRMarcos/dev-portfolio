@@ -13,7 +13,9 @@ const config: Config = {
         primary:"rgba(var(--primary))",
         primaryHover:"rgba(var(--primaryHover))",
         copy:"rgba(var(--copy))",
-        copyInverted:"rgba(var(--copyInverted))"
+        copyInverted:"rgba(var(--copyInverted))",
+        copyNavigationSideBar:"rgba(var(--copyNavigationSideBar))"
+
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

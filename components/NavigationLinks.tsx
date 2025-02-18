@@ -7,8 +7,27 @@ type  MenuItem = { label:string, link:string };
 function getFristPieceFromLink(link:string){
   return `/${String(link).split("/")[1]}`
 }
-export function MenuLinkList({renderCol,linkList,className}:{renderCol:boolean,linkList:MenuItem[],className:string}) {
+export function NavigationLinks({sidebar,linkList,className}:{sidebar:boolean,linkList:MenuItem[],className:string}) {
     const pathname = usePathname();
+
+
+    let style:{
+      generic:string,
+      selectedTrue:string,
+      selectedFalse:string
+    }
+
+  if(sidebar){
+    style = {
+      generic:"h-fit text-sm uppercase text-copy/80  py-1",
+      selectedTrue:`bg-primary text-copyNavigationSideBar rounded-sm`,
+      selectedFalse:"hover:bg-primary/20"}
+  }else{
+    style = {
+      generic:"h-fit text-sm uppercase text-copy/50",
+      selectedTrue:"border-b-2 border-primary text-primary",
+      selectedFalse:"hover:text-primary"}
+  }
   
     const renderLinks = useCallback(
       ({ label, link }: MenuItem, idx: number) => {
@@ -19,10 +38,10 @@ export function MenuLinkList({renderCol,linkList,className}:{renderCol:boolean,l
           <Link
             href={link}
             key={idx}
-            className={`h-fit text-sm uppercase text-copy/50 ${
+            className={`${style.generic} ${
               isSelect
-                ? "border-b-2 border-primary text-primary"
-                : "hover:text-primary"
+                ? style.selectedTrue
+                : style.selectedFalse
             }`}
           >
             {label}
