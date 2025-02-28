@@ -36,10 +36,9 @@ export default function Header({ className }: { className?: string}) {
         </div>
           <div className="flex gap-4 items-center">
 
-          <div className={openSearch?" flex flex-col items-center justify-start pt-20 fixed bg-red-600/70 z-10 right-0 left-0 top-0 bottom-0 select-none":"hidden"} >
+          <div className={openSearch?" flex flex-col items-center justify-start pt-20 fixed bg-background z-10 right-0 left-0 top-0 bottom-0 select-none":"hidden"} >
           
-          <button className="py-4" onClick={() => setOpenSearch(false)}>Fechar</button>
-           <Search/>
+           <Search action={() => setOpenSearch(false)}/>
 
           </div>
 
