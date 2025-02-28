@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pagefind --site docs/server/app --output-path docs/static/chunks/app/pagefind",
+    "build": "next build && pagefind --site docs/server/app/blog --output-path docs/static/chunks/app/pagefind",
     "start": "next start",
     "lint": "next lint"
   },
