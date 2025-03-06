@@ -8,18 +8,18 @@ import { NavigationLinks } from "./NavigationLinks";
 import { HamburgerMenu } from "./HamburgerMenu"
 import { SiteSearch } from "./SiteSearch";
 import { ThemeToggle } from "./ThemeToggle";
-import { LanguageToggle } from "./LanguageToggle";
 import SocialMedia from "@/components/SocialMediaBtn";
 
 import {
   SocialMediaLinks,
 } from "@/site-data"
+import Search from "./Search";
 
 
 export default function Header({ className }: { className?: string}) {
   const [menuState, setmenuState] = useState(false);
-  const [language, setLanguage] = useState(false);
   const {theme, setTheme} = useTheme();
+  const [openSearch,setOpenSearch] = useState(false)
 
 
   function handleToggleTheme(){
@@ -35,13 +35,22 @@ export default function Header({ className }: { className?: string}) {
           <NavigationLinks className="flex items-center flex-row gap-4 " linkList={Navigation} sidebar={false} />
         </div>
           <div className="flex gap-4 items-center">
+
+          <div className={openSearch?" flex flex-col items-center justify-start pt-20 fixed bg-background z-10 right-0 left-0 top-0 bottom-0 select-none":"hidden"} >
+          
+           <Search action={() => setOpenSearch(false)}/>
+
+          </div>
+
             <ThemeToggle theme={theme} action={handleToggleTheme}/>
-            <SiteSearch />
+            <SiteSearch  action={()=> setOpenSearch(!openSearch)}/>
+
             <div className="flex sm:hidden self-end relative">
 
               
               <HamburgerMenu active={menuState} action={() => setmenuState(!menuState)}/>
 
+              
 
               <div className={menuState?"fixed z-10 right-0 left-0 top-0 bottom-0 select-none":"hidden"} onClick={() => setmenuState(false)}>
               </div>
